@@ -82,7 +82,7 @@ export function Sidebar({ className, role = "admin" }: { className?: string; rol
   ];
 
   const csrSettingItems = [
-    { icon: UserCog, label: "My Profile", href: "#" },
+    { icon: UserCog, label: "My Profile", href: "/dashboard/csr/profile", active: pathname === "/dashboard/csr/profile" },
   ];
 
   const studentMenuItems = [
@@ -113,13 +113,14 @@ export function Sidebar({ className, role = "admin" }: { className?: string; rol
   ];
 
   const hrSettingItems = [
-    { icon: Settings, label: "Organization", href: "#" },
+    { icon: Settings, label: "Organization", href: "/dashboard/hr/organization", active: pathname === "/dashboard/hr/organization" },
   ];
   
   const operationsMenuItems = [
     { icon: LayoutDashboard, label: "Overview", href: "/dashboard/scheduler", active: pathname === "/dashboard/scheduler" },
     { icon: CalendarDays, label: "Weekly Schedule", href: "/dashboard/scheduler/schedule", active: pathname === "/dashboard/scheduler/schedule" },
     { icon: Video, label: "Demo Requests", href: "/dashboard/scheduler/demos", active: pathname === "/dashboard/scheduler/demos", badge: "3" },
+    { icon: CalendarClock, label: "Makeup Requests", href: "/dashboard/scheduler/makeup", active: pathname === "/dashboard/scheduler/makeup", badge: "2" },
     { icon: Users, label: "Teacher Availability", href: "/dashboard/scheduler/teachers", active: pathname === "/dashboard/scheduler/teachers" },
   ];
 
@@ -140,6 +141,10 @@ export function Sidebar({ className, role = "admin" }: { className?: string; rol
     { icon: LayoutDashboard, label: "Live Monitor", href: "/dashboard/monitoring", active: pathname === "/dashboard/monitoring" },
     { icon: ClipboardList, label: "Submit Report", href: "/dashboard/monitoring/report", active: pathname === "/dashboard/monitoring/report" },
     { icon: Clock, label: "Past Reports", href: "/dashboard/monitoring/history", active: pathname === "/dashboard/monitoring/history" },
+  ];
+
+  const monitoringSettingItems = [
+    { icon: UserCog, label: "My Profile", href: "/dashboard/monitoring/profile", active: pathname === "/dashboard/monitoring/profile" },
   ];
 
   const menuItems = role === "admin" ? adminMenuItems : role === "teacher" ? teacherMenuItems : role === "student" ? studentMenuItems : role === "hr" ? hrMenuItems : role === "csr" ? csrMenuItems : role === "hod" ? hodMenuItems : role === "monitoring" ? monitoringMenuItems : operationsMenuItems;
@@ -172,6 +177,7 @@ export function Sidebar({ className, role = "admin" }: { className?: string; rol
               <img 
                 src="/logo.png" 
                 alt="Taleem ul Quran Logo" 
+                style={{ maxHeight: '100px', width: 'auto' }}
                 className="h-full w-auto object-contain opacity-100 group-hover:opacity-90 transition-opacity" 
               />
             </div>
@@ -288,7 +294,9 @@ export function Navbar({
   userName = "Admin User",
   userRole = "Super Administrator",
   userAvatar = "https://storage.googleapis.com/banani-avatars/avatar%2Fmale%2F35-50%2FMiddle%20Eastern%2F9",
-  hideSearch = false
+  hideSearch = false,
+  searchPlaceholder = "Search students, classes...",
+  placeholder
 }: { 
   title: string; 
   onMenuClick?: () => void;
@@ -296,6 +304,8 @@ export function Navbar({
   userRole?: string;
   userAvatar?: string;
   hideSearch?: boolean;
+  searchPlaceholder?: string;
+  placeholder?: string;
 }) {
   const [showNotifications, setShowNotifications] = useState(false);
 
@@ -319,7 +329,7 @@ export function Navbar({
             <Search size={18} className="text-muted-foreground" />
             <input 
               type="text" 
-              placeholder="Search students, classes..." 
+              placeholder={placeholder || searchPlaceholder} 
               className="bg-transparent border-none outline-none text-sm font-medium w-full text-foreground placeholder:text-muted-foreground/60"
             />
             <div className="flex items-center gap-1 px-1.5 py-0.5 rounded border border-border bg-card text-[10px] font-bold text-muted-foreground">

@@ -144,8 +144,8 @@ export default function SubmitComplaint() {
                         <div className="text-[12px] font-bold text-muted-foreground font-mono">{c.ref}</div>
                         <span className={cn("text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0",
                           c.status === "Resolved" ? "bg-emerald-100 text-emerald-600" :
-                          c.status === "Under Review" ? "bg-amber-100 text-amber-600" :
-                          "bg-slate-100 text-slate-500"
+                            c.status === "Under Review" ? "bg-amber-100 text-amber-600" :
+                              "bg-slate-100 text-slate-500"
                         )}>{c.status}</span>
                       </div>
                       <div className="text-[13px] font-bold text-foreground leading-tight">{c.type}</div>

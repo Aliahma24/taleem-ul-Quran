@@ -107,7 +107,7 @@ export default function VerifyOTPPage() {
               {otp.map((digit, i) => (
                 <div key={i} className="flex-1 aspect-square relative">
                   <input
-                    ref={(el) => (inputRefs.current[i] = el)}
+                    ref={(el) => { inputRefs.current[i] = el; }}
                     type="text"
                     value={digit}
                     onChange={(e) => handleOtpChange(i, e.target.value)}

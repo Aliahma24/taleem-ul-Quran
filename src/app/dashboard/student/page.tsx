@@ -87,9 +87,13 @@ export default function StudentDashboard() {
                  </div>
               </div>
 
-              <button className="w-full md:w-[160px] h-12 rounded-lg bg-primary text-primary-foreground font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all active:scale-[0.98] shrink-0 shadow-lg shadow-primary/20 relative z-10">
-                <Video size={18} />
-                Join Class
+              <button className="w-full md:w-[200px] h-14 rounded-xl bg-[#2D8CFF] text-white font-bold flex flex-col items-center justify-center gap-0 hover:bg-[#2D8CFF]/90 transition-all active:scale-[0.98] shrink-0 shadow-xl shadow-blue-500/20 relative z-10 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                <div className="flex items-center gap-2">
+                   <Video size={20} fill="white" />
+                   <span className="text-[15px]">Join Zoom Class</span>
+                </div>
+                <div className="text-[10px] font-bold opacity-80 uppercase tracking-widest mt-0.5">Room ID: 882-991-002</div>
               </button>
             </div>
 

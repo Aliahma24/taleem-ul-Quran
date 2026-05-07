@@ -171,9 +171,13 @@ export default function TeacherDashboard() {
                         </div>
                       </div>
                     </div>
-                    <button className="h-14 px-8 rounded-xl bg-primary text-primary-foreground font-bold flex items-center gap-3 hover:bg-primary/90 hover:scale-[1.02] transition-all active:scale-[0.98] whitespace-nowrap shrink-0 shadow-xl shadow-primary/25">
-                      <Video size={22} />
-                      Join Video Class
+                    <button className="h-16 px-8 rounded-2xl bg-[#2D8CFF] text-white font-bold flex flex-col items-center justify-center gap-0 hover:bg-[#2D8CFF]/90 hover:scale-[1.02] transition-all active:scale-[0.98] whitespace-nowrap shrink-0 shadow-2xl shadow-blue-500/30 group overflow-hidden relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                      <div className="flex items-center gap-3">
+                         <Video size={24} fill="white" />
+                         <span className="text-lg">Start Zoom Class</span>
+                      </div>
+                      <div className="text-[10px] font-bold opacity-80 uppercase tracking-widest mt-0.5">Host Room: 882-991-002</div>
                     </button>
                   </div>
                 </div>

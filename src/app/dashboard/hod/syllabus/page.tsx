@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import {
   BookOpen, Plus, Search, Filter, Edit2, Trash2,
   CheckCircle2, ChevronRight, GraduationCap, Archive,
-  LayoutGrid, List
+  LayoutGrid, List, MoreVertical
 } from "lucide-react";
 import { Sidebar, Navbar } from "@/components/dashboard-layout";
 import { clsx, type ClassValue } from "clsx";
